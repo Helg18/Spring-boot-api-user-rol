@@ -23,5 +23,9 @@ public class RolService implements RolServiceInterface {
 		rolRepo.save(rol);
 		return rol;
 	}
+	
+	public void eliminar(int id) {
+		rolRepo.deleteById(id);
+	}
 
 }

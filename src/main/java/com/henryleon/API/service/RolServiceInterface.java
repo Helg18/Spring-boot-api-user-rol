@@ -10,4 +10,7 @@ public interface RolServiceInterface {
 	
 	// Guardar
 	Rol guardar(Rol rol);	
+	
+	// Eliminar
+	void eliminar(int id);
 }

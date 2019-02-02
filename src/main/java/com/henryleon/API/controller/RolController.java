@@ -35,5 +35,12 @@ public class RolController {
 	public Rol modificar(@RequestBody Rol rol) {
 		return serviceRol.guardar(rol);
 	}
+	
+	@DeleteMapping("/rol")
+	public String eliminar(@RequestBody Rol rol) {
+		serviceRol.eliminar(rol.getId());
+		return "Deleted";
+	}
+	
 
 }
