@@ -19,4 +19,9 @@ public class RolService implements RolServiceInterface {
 		return rolRepo.findAll();
 	}
 
+	public Rol guardar(Rol rol) {
+		rolRepo.save(rol);
+		return rol;
+	}
+
 }

@@ -6,5 +6,7 @@ import com.henryleon.API.entity.Rol;
 public interface RolServiceInterface {
 	
 	List<Rol> buscarTodos();
+	
+	Rol guardar(Rol rol);
 
 }
