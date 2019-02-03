@@ -28,6 +28,11 @@ public class UsuarioController {
 	
 	@PostMapping("/usuario")
 	public Usuario guradar(@RequestBody Usuario usuario) {
+		System.out.println("");
+		System.out.println("");
+		System.out.println(usuario);
+		System.out.println("");
+		System.out.println("");
 		return serviceUsuario.guardar(usuario);
 	}
 	
