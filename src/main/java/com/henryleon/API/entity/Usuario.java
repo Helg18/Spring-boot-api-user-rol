@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -31,8 +33,9 @@ public class Usuario {
 
 	private Boolean activo;
 
-	@Column(name = "Rol_id")
-	private Integer rolId;
+	@ManyToOne
+	@JoinColumn(name="Rol_id")
+	private Rol rol;
 
 	public Date getFechaCreacion() {
 		return fechaCreacion;
@@ -42,16 +45,16 @@ public class Usuario {
 		this.fechaCreacion = fechaCreacion;
 	}
 
-	public Integer getRolId() {
-		return rolId;
-	}
-
-	public void setRolId(Integer rolId) {
-		this.rolId = rolId;
-	}
-
 	public Integer getId() {
 		return id;
+	}
+
+	public Rol getRol() {
+		return rol;
+	}
+
+	public void setRol(Rol rol) {
+		this.rol = rol;
 	}
 
 	public void setId(Integer id) {
@@ -118,7 +121,7 @@ public class Usuario {
 	public String toString() {
 		return "Usuario [id=" + id + ", nombres=" + nombres + ", apellidos=" + apellidos + ", email=" + email
 				+ ", telefono=" + telefono + ", username=" + username + ", password=" + password + ", fechaCreacion="
-				+ fechaCreacion + ", activo=" + activo + ", rolId=" + rolId + "]";
+				+ fechaCreacion + ", activo=" + activo + "]";
 	}
 
 }
