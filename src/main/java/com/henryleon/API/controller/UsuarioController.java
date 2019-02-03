@@ -1,6 +1,7 @@
 package com.henryleon.API.controller;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,9 +38,26 @@ public class UsuarioController {
 	
 	@DeleteMapping("/usuario")
 	public String eliminar(@RequestBody Usuario usuario) {
-		serviceUsuario.eliminar(usuario.getId());
-		return "Deleted";
+		return serviceUsuario.eliminar(usuario.getId());
 	}
+	
+//	Metodos con erdenamiento
+	@GetMapping("/usuarios/orderdate")
+	public List<Usuario> orderByDate(){
+		return serviceUsuario.orderByDate();
+	}
+
+	@GetMapping("/usuarios/orderrol")
+	public List<Usuario> orderByRol(){
+		return serviceUsuario.orderByRol();
+	}
+	
+	@PostMapping("/usuario/username")
+	public Usuario getByUsernameIs(@RequestBody String username) {
+		return serviceUsuario.findByUsernameIs(username);
+	}
+	
+	
 
 	
 }

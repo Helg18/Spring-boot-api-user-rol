@@ -1,8 +1,6 @@
 package com.henryleon.API.service;
 
 import java.util.List;
-
-import com.henryleon.API.entity.Rol;
 import com.henryleon.API.entity.Usuario;
 
 public interface UsuarioServiceInterface {
@@ -14,5 +12,13 @@ public interface UsuarioServiceInterface {
 	Usuario guardar(Usuario usuario);	
 	
 	// Eliminar
-	void eliminar(int id);
+	String eliminar(int id);
+
+	// All users Order by date
+	List<Usuario> orderByDate();
+
+	// All user sort by rol
+	List<Usuario> orderByRol();
+	
+
 }

@@ -2,11 +2,14 @@ package com.henryleon.API.entity;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "Usuario")
@@ -21,9 +24,31 @@ public class Usuario {
 	private String telefono;
 	private String username;
 	private String password;
-	private Date fecha_creacion;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name = "fecha_creacion")
+	private Date fechaCreacion;
+
 	private Boolean activo;
-	private Integer Rol_id;
+
+	@Column(name = "Rol_id")
+	private Integer rolId;
+
+	public Date getFechaCreacion() {
+		return fechaCreacion;
+	}
+
+	public void setFechaCreacion(Date fechaCreacion) {
+		this.fechaCreacion = fechaCreacion;
+	}
+
+	public Integer getRolId() {
+		return rolId;
+	}
+
+	public void setRolId(Integer rolId) {
+		this.rolId = rolId;
+	}
 
 	public Integer getId() {
 		return id;
@@ -81,22 +106,6 @@ public class Usuario {
 		this.password = password;
 	}
 
-	public Integer getRol_id() {
-		return Rol_id;
-	}
-
-	public void setRol_id(Integer rol_id) {
-		Rol_id = rol_id;
-	}
-
-	public Date getFecha_creacion() {
-		return fecha_creacion;
-	}
-
-	public void setFecha_creacion(Date fecha_creacion) {
-		this.fecha_creacion = fecha_creacion;
-	}
-
 	public Boolean getActivo() {
 		return activo;
 	}
@@ -108,8 +117,8 @@ public class Usuario {
 	@Override
 	public String toString() {
 		return "Usuario [id=" + id + ", nombres=" + nombres + ", apellidos=" + apellidos + ", email=" + email
-				+ ", telefono=" + telefono + ", username=" + username + ", password=" + password + ", fecha_creacion="
-				+ fecha_creacion + ", activo=" + activo + ", Rol_id=" + Rol_id + "]";
+				+ ", telefono=" + telefono + ", username=" + username + ", password=" + password + ", fechaCreacion="
+				+ fechaCreacion + ", activo=" + activo + ", rolId=" + rolId + "]";
 	}
 
 }
