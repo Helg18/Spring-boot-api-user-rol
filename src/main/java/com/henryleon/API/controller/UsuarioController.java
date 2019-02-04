@@ -58,7 +58,7 @@ public class UsuarioController {
 	}
 	
 	@PostMapping("/usuario/username")
-	public Usuario getByUsernameIs(@RequestBody String username) {
+	public List<Usuario> getByUsernameIs(@RequestBody String username) {
 		return serviceUsuario.findByUsernameIs(username);
 	}
 	

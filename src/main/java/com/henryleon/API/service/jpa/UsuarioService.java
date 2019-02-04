@@ -49,7 +49,7 @@ public class UsuarioService implements UsuarioServiceInterface {
 	}
 	
 	
-	public Usuario findByUsernameIs(String username) {
+	public List<Usuario> findByUsernameIs(String username) {
 		return usuarioRepo.findByUsernameIs(username);
 	}
 	

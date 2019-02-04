@@ -1,6 +1,8 @@
 package com.henryleon.API.repository;
 
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import com.henryleon.API.entity.Usuario;
@@ -9,5 +11,5 @@ import com.henryleon.API.entity.Usuario;
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
 	
 	// Select * From usuarios where username = ? 
-	Usuario findByUsernameIs(String username);
+	List<Usuario> findByUsernameIs(String username);
 }
